@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cassert>
+
+using namespace std;
+
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        assert(node->next);
+        node->val = node->next->val;
+        node->next = node->next->next;
+    }
+};
+
+int main(void)
+{
+    return 0;
+}
